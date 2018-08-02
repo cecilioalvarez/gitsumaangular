@@ -11,17 +11,27 @@ import { LibroRESTService } from '../libro-rest.service';
 export class Hola013Component implements OnInit {
 
   listaLibros:Libro[];
+  nuevoLibro:Libro= new Libro();
   
 
   constructor(miservicio:LibroRESTService) {
 
+    //recogemos la promesa
+    //la resolvemos
      miservicio.findAll().then((datos)=>{
-
+      console.log(datos);
       this.listaLibros=datos as Libro[];
      });
+
+
    }
 
   ngOnInit() {
+  }
+
+  insertar() {
+
+    console.log(this.nuevoLibro);
   }
 
 }

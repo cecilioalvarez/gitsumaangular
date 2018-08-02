@@ -8,10 +8,14 @@ export class LibroRESTService {
 
   constructor(private miservicio:HttpClient) { }
 
-
+  //sino que se ejecuta directo
+  // y devolvia vacio
   findAll():Promise<Libro[]>{
-
-    return this.miservicio.get<Libro[]>("http://localhost:3000/libros").toPromise();
+    //invocavamos al get
+    //tarde un segundo en ejecutar porque hace una peticion
+    //ajax
+    return this.miservicio
+    .get<Libro[]>("http://localhost:3000/libros").toPromise();
   }
 
 }
