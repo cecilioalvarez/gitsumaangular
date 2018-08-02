@@ -12,9 +12,10 @@ export class Hola013Component implements OnInit {
 
   listaLibros:Libro[];
   nuevoLibro:Libro= new Libro();
+  //a este nivel pero privada
   
 
-  constructor(miservicio:LibroRESTService) {
+  constructor(private miservicio:LibroRESTService) {
 
     //recogemos la promesa
     //la resolvemos
@@ -23,7 +24,6 @@ export class Hola013Component implements OnInit {
       this.listaLibros=datos as Libro[];
      });
 
-
    }
 
   ngOnInit() {
@@ -31,7 +31,12 @@ export class Hola013Component implements OnInit {
 
   insertar() {
 
-    console.log(this.nuevoLibro);
+   this.miservicio.insert(this.nuevoLibro).then((datos)=> {
+
+        console.log(datos);
+        this.listaLibros.push(this.nuevoLibro);
+        this.nuevoLibro=new Libro();
+   })
   }
 
 }

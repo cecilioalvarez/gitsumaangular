@@ -18,4 +18,12 @@ export class LibroRESTService {
     .get<Libro[]>("http://localhost:3000/libros").toPromise();
   }
 
+  insert(libro:Libro):Promise<Libro> {
+
+    return this
+    .miservicio
+    .post("http://localhost:3000/libros",libro)
+    .toPromise();
+  }
+
 }
