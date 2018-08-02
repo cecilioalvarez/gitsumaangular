@@ -1,0 +1,35 @@
+<table border="1px solid black">
+<tr *ngFor="let item of lista; let indice=index">
+<td>{{indice+1}}</td>
+<td>
+  {{item}}
+</td>
+
+</tr>
+
+</table>
+<table border="1px solid black">
+    <tr *ngFor="let item of lista;let par=even;let impar=odd;" 
+    [ngClass]="{azul:impar,rojo:par}">
+  
+    <td>
+      {{item}}
+    </td>
+    
+    </tr>
+    
+    </table>
+
+    <table border="1px solid black">
+        <tr *ngFor="let item of lista; let primero=first;let ultimo=last"
+         [ngClass]="{azul:primero,rojo:ultimo}"
+        
+        >
+      
+        <td>
+          {{item}}
+        </td>
+        
+        </tr>
+        
+        </table>

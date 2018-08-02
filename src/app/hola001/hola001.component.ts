@@ -9,6 +9,7 @@ export class Hola001Component implements OnInit {
 
   mensaje:string;
   importe:number;
+  
   urlImagen:string="/assets/naturaleza.jpg";
 
   constructor() {

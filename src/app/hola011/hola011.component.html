@@ -1,0 +1,18 @@
+<p>
+<select name="miselect" [(ngModel)]="personasSeleccionada" multiple>
+
+
+  <option *ngFor="let persona of listaPersonas" [ngValue]="persona">
+    {{persona.nombre}}
+    </option>
+
+</select>
+</p>
+
+<p *ngFor="let persona of personasSeleccionada">
+
+{{persona.nombre}}
+{{persona.apellidos}}
+
+
+</p>

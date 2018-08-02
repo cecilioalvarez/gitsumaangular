@@ -1,0 +1,26 @@
+<p>
+ Nota:{{nota}}
+
+ <!--Edad:{{edad}}-->
+</p>
+<p *ngIf="nota>=5">has aprobado</p>
+<!--
+<p *ngIf="nota>=5 && nota<7">has aprobado</p>
+
+<p *ngIf="nota>=7 && nota<9">notable</p>
+
+<p *ngIf="nota>=9">sobresaliente</p>
+
+<p *ngIf="nota>=9 && asignatura=='matematicas'">estudia ingenieria</p>
+
+
+
+<p *ngIf="(nota>=9 && asignatura=='matematicas') || (edad==16)">estudia aeronautica</p>
+-->
+Nota:
+<input type="button" value="+" (click)="nota=nota+1"/>
+<input type="button" value="-" (click)="nota=nota-1"/>
+<!--Edad:
+<input type="button" value="+" (click)="edad=edad+1"/>
+<input type="button" value="-" (click)="edad=edad-1"/>
+-->

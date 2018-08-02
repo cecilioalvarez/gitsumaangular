@@ -11,7 +11,7 @@ export class Hola004Component implements OnInit {
   constructor() {
 
 
-    this.yo= new Persona("pepe","perez",20);
+    this.yo= new Persona("pepe");
    }
 
   ngOnInit() {

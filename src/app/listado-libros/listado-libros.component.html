@@ -1,0 +1,46 @@
+filtroTitulo:
+<input type="text"
+ name="filtroTitulo" 
+ [(ngModel)]="filtroTitulo"
+ 
+ />
+
+<table>
+  <tr>
+    <th><a href="#" (click)="ordenar='titulo'">Titulo</a></th>
+    <th><a href="#"  (click)="ordenar='autor'">Autor</a></th>
+    <th><a href="#"  (click)="ordenar='paginas'">Paginas</a></th>
+    <th><a href="#" (click)="ordenar='categoria'">Categoria</a></th>
+
+  </tr>
+  <tr *ngFor="let libro of listaLibros" 
+  (mouseover)="seleccionado=libro"
+  [class.azul]="estaSeleccionado(libro)">
+
+  <td>{{libro.titulo}}</td>
+  <td>{{libro.autor}}</td>
+  <td>{{libro.paginas}}</td>
+  <td>{{libro.categoria}}</td>
+  <td><input type="button" value="borrar" (click)="borrar(libro)"/></td>
+  </tr>
+</table>
+<p *ngIf="seleccionado!=null">
+    Seleccionado:{{seleccionado?.titulo}}{{seleccionado?.autor}}
+
+</p>
+
+<form name="miformulario">
+  <p>
+  Titulo:<input type="text"   name="titulo" [(ngModel)]="nuevoLibro.titulo"/>
+</p>
+<p>
+    Autor:<input type="text" name="autor" [(ngModel)]="nuevoLibro.autor"/>
+  </p>
+  <p>
+     Paginas: <input type="text" name="paginas" [(ngModel)]="nuevoLibro.paginas"/>
+    </p>
+    <p>
+       Categoria: <input type="text" name="categoria" [(ngModel)]="nuevoLibro.categoria"/>
+      </p>
+      <input type="button" value="insertar" (click)="insertar()"/>
+</form>
