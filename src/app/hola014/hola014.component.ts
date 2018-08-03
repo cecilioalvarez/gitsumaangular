@@ -4,14 +4,16 @@ import { Libro } from '../negocio/libro';
 import { LibroRESTService } from '../libro-rest.service';
 
 @Component({
-  selector: 'app-hola013',
-  templateUrl: './hola013.component.html',
-  styleUrls: ['./hola013.component.css']
+  selector: 'app-hola014',
+  templateUrl: './hola014.component.html',
+  styleUrls: ['./hola014.component.css']
 })
-export class Hola013Component implements OnInit {
+export class Hola014Component implements OnInit {
 
   listaLibros: Libro[];
   nuevoLibro: Libro = new Libro();
+  vista:string="listaLibros";
+  libroDetalle:Libro;
   //a este nivel pero privada
 
 
@@ -33,13 +35,14 @@ export class Hola013Component implements OnInit {
 
     this.miservicio.insert(this.nuevoLibro).then((datos) => {
 
-
+      
       this.nuevoLibro = new Libro();
       //promesa
       return this.miservicio.findAll();
     }).then((datos) => {
 
       this.listaLibros = datos as Libro[];
+      this.vista="listaLibros";
 
     })
   }
@@ -61,6 +64,16 @@ export class Hola013Component implements OnInit {
       this.listaLibros = datos as Libro[];
 
     })
+
+  }
+
+  detalle(libro:Libro) {
+
+    this.miservicio.findOne(libro.titulo).then((datos)=>{
+
+        this.libroDetalle=datos as Libro;
+        this.vista='detalle';
+    });
 
   }
 }

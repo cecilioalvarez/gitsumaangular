@@ -1,0 +1,40 @@
+<div *ngIf="vista=='listaLibros'">
+<table>
+    
+  <tr *ngFor="let libro of listaLibros" 
+ >
+
+  <td>{{libro.titulo}}</td>
+  <td>{{libro.autor}}</td>
+ <!-- <td>{{libro.paginas}}</td>
+  <td>{{libro.categoria}}</td>-->
+  <td><input type="button" value="borrar" (click)="borrar(libro)"></td>
+  <td><input type="button" value="detalle" (click)="detalle(libro)"></td>
+  </tr>
+</table>
+<input type="button" value="insertarLibro" (click)="vista='formularioLibros'"/>
+</div>
+<div *ngIf="vista=='formularioLibros'">
+<form name="miformulario">
+    <p>
+    Titulo:<input type="text"   name="titulo" [(ngModel)]="nuevoLibro.titulo"/>
+  </p>
+  <p>
+      Autor:<input type="text" name="autor" [(ngModel)]="nuevoLibro.autor"/>
+    </p>
+    <p>
+       Paginas: <input type="text" name="paginas" [(ngModel)]="nuevoLibro.paginas"/>
+      </p>
+      <p>
+         Categoria: <input type="text" name="categoria" [(ngModel)]="nuevoLibro.categoria"/>
+        </p>
+        <input type="button" value="insertar" (click)="insertar()"/>
+  </form>
+</div>
+<div *ngIf="vista=='detalle'">
+<p>{{libroDetalle.titulo}}</p>
+<p>{{libroDetalle.autor}}</p>
+<p>{{libroDetalle.paginas}}</p>
+<p>{{libroDetalle.categoria}}</p>
+<input type="button" value="volver" (click)="vista='listaLibros'"/>
+</div>

@@ -18,6 +18,9 @@ import { Hola012Component } from './hola012/hola012.component';
 import { ListadoLibrosComponent } from './listado-libros/listado-libros.component';
 import { Hola013Component } from './hola013/hola013.component';
 import {HttpClient,HttpClientModule} from "@angular/common/http";
+import { Hola014Component } from './hola014/hola014.component';
+import { Hola015Component } from './hola015/hola015.component';
+import { Hola016Component } from './hola016/hola016.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import {HttpClient,HttpClientModule} from "@angular/common/http";
     Hola011Component,
     Hola012Component,
     ListadoLibrosComponent,
-    Hola013Component
+    Hola013Component,
+    Hola014Component,
+    Hola015Component,
+    Hola016Component
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule

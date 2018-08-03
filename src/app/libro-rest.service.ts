@@ -25,5 +25,14 @@ export class LibroRESTService {
     .post("http://localhost:3000/libros",libro)
     .toPromise();
   }
+  delete(libro:Libro):Promise<Libro> {
+
+    return this.miservicio.delete<Libro>("http://localhost:3000/libros/"+libro.titulo).toPromise();
+  }
+
+  findOne(titulo:string):Promise<Libro> {
+
+    return this.miservicio.get<Libro>("http://localhost:3000/libros/"+titulo).toPromise();
+  }
 
 }
