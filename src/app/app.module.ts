@@ -21,6 +21,10 @@ import {HttpClient,HttpClientModule} from "@angular/common/http";
 import { Hola014Component } from './hola014/hola014.component';
 import { Hola015Component } from './hola015/hola015.component';
 import { Hola016Component } from './hola016/hola016.component';
+import { Hola017Component } from './hola017/hola017.component';
+import { PorcentajePipe } from './porcentaje.pipe';
+import { Hola018Component } from './hola018/hola018.component';
+import { Hola019Component } from './hola019/hola019.component';
 
 
 @NgModule({
@@ -43,7 +47,11 @@ import { Hola016Component } from './hola016/hola016.component';
     Hola013Component,
     Hola014Component,
     Hola015Component,
-    Hola016Component
+    Hola016Component,
+    Hola017Component,
+    PorcentajePipe,
+    Hola018Component,
+    Hola019Component
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule
