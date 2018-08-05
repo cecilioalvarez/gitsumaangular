@@ -25,6 +25,7 @@ import { Hola017Component } from './hola017/hola017.component';
 import { PorcentajePipe } from './porcentaje.pipe';
 import { Hola018Component } from './hola018/hola018.component';
 import { Hola019Component } from './hola019/hola019.component';
+import { ListaComponent } from './lista/lista.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { Hola019Component } from './hola019/hola019.component';
     Hola017Component,
     PorcentajePipe,
     Hola018Component,
-    Hola019Component
+    Hola019Component,
+    ListaComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule
