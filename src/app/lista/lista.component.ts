@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Libro } from '../negocio/libro';
 import { LibroRESTService } from '../libro-rest.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -13,7 +14,7 @@ export class ListaComponent implements OnInit {
   }
   listaLibros: Libro[] = [];
 
-  constructor(private servicio: LibroRESTService) {
+  constructor(private servicio: LibroRESTService,private ruta:Router) {
 
     servicio.findAll().then((datos) => {
       console.log(datos);
@@ -36,7 +37,16 @@ export class ListaComponent implements OnInit {
 
     })
 
+
   }
+
+  detalle(libro:Libro) {
+
+      this.ruta.navigate(["/detalle",{titulo:libro.titulo}]);
+
+  }
+
+
 
 
 }
