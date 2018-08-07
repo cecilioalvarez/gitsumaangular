@@ -1,6 +1,37 @@
-<!--<hola desde angular
-<app-hola001></app-hola001>
-<app-hola002></app-hola002>
-<app-hola003></app-hola003>-->
 
-<app-hola018></app-hola018>
+Hemos configurado el inicio del enrutador
+
+<p>
+    <a [routerLink]="['c1']">ir a la primera</a>
+</p>
+<p>
+    <a [routerLink]="['c2']">ir a la segunda</a>
+</p>
+<p>
+    <a [routerLink]="['c3']">ir a la tercera</a>
+</p>
+
+<p>
+        <a [routerLink]="['c4','cecilio']">ir a la cuarta</a>
+    </p>
+
+    <p>
+        <a [routerLink]="['c5','cecilio','alvarez']">ir a la quinta</a>
+    </p>
+
+    <p>
+
+        <input type="button" value="ir a la primera" (click)="primera()"/>
+    </p>
+
+    <p>
+        <a [routerLink]="['nuevo/c6']">ir al seis</a>
+    </p>
+    <p>
+        <a [routerLink]="['nuevo/c7']">ir al siete</a>
+    </p>
+
+    <p>
+        <a [routerLink]="['nuevo/c8']">ir al ocho</a>
+    </p>
+<router-outlet></router-outlet>

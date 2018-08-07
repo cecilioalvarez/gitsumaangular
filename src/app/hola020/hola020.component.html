@@ -1,0 +1,9 @@
+<p>
+  {{mensaje}}
+  {{libro?.titulo}}
+  <app-hola021 
+  (cambioNota)="cambiar($event)"
+  (crearLibro)="mostrarLibro($event)"
+  
+  ></app-hola021>
+</p>
