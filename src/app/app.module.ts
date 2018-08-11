@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { Hola001Component } from './hola001/hola001.component';
@@ -37,10 +37,16 @@ import { VacioComponent } from './vacio/vacio.component';
 import { HolaRouter6Component } from './hola-router6/hola-router6.component';
 import { HolaRouter7Component } from './hola-router7/hola-router7.component';
 import { HolaRouter8Component } from './hola-router8/hola-router8.component';
+import { Hola022Component } from './hola022/hola022.component';
+import { registerLocaleData } from '@angular/common';
 
+  import localeES from '@angular/common/locales/es';
+
+registerLocaleData(localeES, 'es');
 
 
 const rutas: Routes = [
+  {path:'fecha',component: Hola022Component},
   { path: 'c1', component: HolaRouter1Component },
   { path: 'c2', component: HolaRouter2Component },
   { path: 'c3', component: HolaRouter3Component },
@@ -96,6 +102,7 @@ const rutas: Routes = [
     Hola019Component,
     Hola020Component,
     Hola021Component,
+    Hola022Component,
     HolaRouter1Component,
     HolaRouter2Component,
     HolaRouter3Component,
@@ -112,7 +119,7 @@ const rutas: Routes = [
       { enableTracing: true } // <-- tareas de debug
     )
   ],
-  providers: [HttpClient],
+  providers: [HttpClient,   { provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
